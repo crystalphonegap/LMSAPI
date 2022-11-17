@@ -82,7 +82,7 @@ namespace HRJ.LMS.Application.Report
                                             .FirstOrDefaultAsync();
 
                 leadQueryable = leadQueryable
-                                .Where(x => x.LastUpdatedAt >= fiscalYear.StartYearDate && x.LastUpdatedAt <= fiscalYear.EndYearDate); // .Where(x => x.LeadConversion >= fiscalYear.StartYearDate && x.LeadConversion <= fiscalYear.EndYearDate); 
+                             .Where(x => x.LeadConversion >= fiscalYear.StartYearDate && x.LeadConversion <= fiscalYear.EndYearDate); //    .Where(x => x.LastUpdatedAt >= fiscalYear.StartYearDate && x.LastUpdatedAt <= fiscalYear.EndYearDate); //
 
                 var leads = await leadQueryable.ToListAsync();
 
@@ -104,9 +104,9 @@ namespace HRJ.LMS.Application.Report
                     foreach(var month in fiscalYear.FiscalMonths)
                     {
                         var leadConversionDto = leads
-                                    .Where(x => x.LastUpdatedAt >= month.StartMonthDate && x.LastUpdatedAt <= month.EndMonthDate //  .Where(x => x.LeadConversion >= month.StartMonthDate && x.LeadConversion <= month.EndMonthDate
+                                     .Where(x => x.LeadConversion >= month.StartMonthDate && x.LeadConversion <= month.EndMonthDate //.Where(x => x.LastUpdatedAt >= month.StartMonthDate && x.LastUpdatedAt <= month.EndMonthDate // 
                                                 && x.AssignedToECId == expCenter.Id)
-                                    .GroupBy(x => x.LeadConversion.GetValueOrDefault().Month)
+                                    .GroupBy(x => x.LeadConversion.GetValueOrDefault().Month) //.GroupBy(x => x.LeadConversion.GetValueOrDefault().Month)
                                     .Select(x => new LeadConversionDto
                                     {
                                         ConvertedLeads = x.Count(),

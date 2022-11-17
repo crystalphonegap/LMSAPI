@@ -24,3 +24,16 @@ D:\AhmedProject\LMS\hrj-lms-master\hrj-lms-master\HRJ.LMS.Persistence\obj\Debug\
 D:\AhmedProject\LMS\hrj-lms-master\hrj-lms-master\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.csproj.CopyComplete
 D:\AhmedProject\LMS\hrj-lms-master\hrj-lms-master\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.dll
 D:\AhmedProject\LMS\hrj-lms-master\hrj-lms-master\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.pdb
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\bin\Debug\netcoreapp3.1\HRJ.LMS.Persistence.deps.json
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\bin\Debug\netcoreapp3.1\HRJ.LMS.Persistence.dll
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\bin\Debug\netcoreapp3.1\HRJ.LMS.Persistence.pdb
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.csproj.AssemblyReference.cache
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.AssemblyInfoInputs.cache
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.AssemblyInfo.cs
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.csproj.CoreCompileInputs.cache
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.csproj.CopyComplete
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.dll
+D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Persistence\obj\Debug\netcoreapp3.1\HRJ.LMS.Persistence.pdb

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\AhmedProject\LMS\LMSAPI\PublishAPI</_PublishTargetUrl>
+    <History>True|2022-11-08T04:01:11.9241027Z;False|2022-11-08T09:20:27.0354518+05:30;True|2022-08-29T17:31:49.9321935+05:30;True|2022-08-29T16:07:14.0484079+05:30;True|2022-08-29T15:42:49.2473466+05:30;True|2022-08-29T15:27:09.7284547+05:30;True|2022-08-29T15:26:12.6917643+05:30;True|2022-07-30T13:08:31.9715510+05:30;True|2022-07-30T13:02:59.3097049+05:30;True|2022-05-17T21:12:44.6282076+05:30;True|2022-05-17T11:45:56.2061166+05:30;True|2022-05-17T11:14:21.6856115+05:30;True|2022-05-17T10:44:36.7155285+05:30;True|2022-05-06T16:11:39.4895721+05:30;True|2022-05-06T14:18:00.5691700+05:30;True|2022-05-03T10:57:59.5421429+05:30;True|2022-04-30T13:32:28.8665937+05:30;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+</Project>

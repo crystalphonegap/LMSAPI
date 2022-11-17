@@ -55,7 +55,7 @@ namespace HRJ.LMS.API.Controllers
         }
 
         [Authorize]
-        [HttpPut("saveLeadDetail/{leadId}")]
+        [HttpPost("saveLeadDetail/{leadId}")]
         public async Task<BaseDto> SaveLeadDetails(Guid leadId, SaveLead.SaveLeadCommand saveLeadCommand)
         {
             saveLeadCommand.Id = leadId;
@@ -94,5 +94,6 @@ namespace HRJ.LMS.API.Controllers
 
             return File(invoiceFileContent.FileContents, invoiceFileContent.ContentType, invoiceFileContent.FileName);
         }
+       
     }
 }

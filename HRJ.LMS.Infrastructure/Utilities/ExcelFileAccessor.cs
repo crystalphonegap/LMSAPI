@@ -90,31 +90,42 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
                             //lead status
                             col = 4;
-                            sheet.Cells[row, col].Value = "Open";     //4
-                            if (LeadStatusCode.CallingStatus_NotReachable
-                                        .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
-                                    || lead.LeadStatus == null
-                                    || LeadStatusCode.LeadStatus_Follow_up
-                                            .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+                            /*  sheet.Cells[row, col].Value = "Open";   */  //4
+                            if (lead.LeadCallingStatusId == 2 || lead.LeadCallingStatusId == 3 || lead.LeadCallingStatusId == null || lead.LeadStatusId == 4 || lead.LeadStatusId == null)
                             {
-                                sheet.Cells[row, col++].Value = "Open";     //4
+                                //sheet.Cells[row, col++].Value = "Open";
+                                sheet.Cells[row, col].Value = "Open";
+                            }
+                            else
+                            {
+                                //sheet.Cells[row, col++].Value = "Closed";   //4
+                                sheet.Cells[row, col].Value = "Closed";
                             }
 
-                            if (LeadStatusCode.CallingStatus_NotQualified
-                                    .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
-                                || LeadStatusCode.CallingStatus_Lost_To_Competition
-                                    .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
-                                || LeadStatusCode.LeadStatus_Closed_with_HRJ
-                                    .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
-                                || LeadStatusCode.LeadStatus_Closed_with_other_brand
-                                    .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
-                                || LeadStatusCode.LeadStatus_No_Requirement
-                                    .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
-                            {
-                                sheet.Cells[row, col++].Value = "Closed";   //4
-                            }
-                            
-                            
+                            //if (LeadStatusCode.CallingStatus_NotReachable
+                            //            .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
+                            //        || lead.LeadStatus == null
+                            //        || LeadStatusCode.LeadStatus_Follow_up
+                            //                .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+                            //{
+                            //    sheet.Cells[row, col++].Value = "Open";     //4
+                            //}
+
+                            //if (LeadStatusCode.CallingStatus_NotQualified
+                            //        .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
+                            //    || LeadStatusCode.CallingStatus_Lost_To_Competition
+                            //        .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
+                            //    || LeadStatusCode.LeadStatus_Closed_with_HRJ
+                            //        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
+                            //    || LeadStatusCode.LeadStatus_Closed_with_other_brand
+                            //        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
+                            //    || LeadStatusCode.LeadStatus_No_Requirement
+                            //        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+                            //{
+                            //    sheet.Cells[row, col++].Value = "Closed";   //4
+                            //}
+
+
                             sheet.Cells[row, 5].Value = lead.ContactPersonName; //5
                             sheet.Cells[row, 7].Value = lead.Subject;   //7
                             sheet.Cells[row, 8].Value = lead.Description;
@@ -168,9 +179,10 @@ namespace HRJ.LMS.Infrastructure.Utilities
                             sheet.Cells[row, col++].Value = lead.FutureRequirement;    //36
                             sheet.Cells[row, col++].Value = lead.FutureRequirementTileSegment; //37
                             sheet.Cells[row, col++].Value = lead.FutureRequirementVolume;      //38
+                            sheet.Cells[row, col++].Value = lead.LastUpdatedAt;      //39
                             row++;
                         }
-                        sheet.Cells[1, 1, row-1, 1].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
+                        sheet.Cells[1, 1, row - 1, 1].Style.Numberformat.Format = DateTimeFormatInfo.CurrentInfo.ShortDatePattern;
                     });
 
 
@@ -186,41 +198,64 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
             foreach (var source in leadSources)
             {
-                var columns = excelTemplate
+                try
+                {
+
+
+
+                    var columns = excelTemplate
                             .Where(x => x.LeadSource == source)
                             .OrderBy(x => x.ColumnOrder);
 
-                var matched = false;
-                foreach (var col in columns)
-                {
-                    if (col.ColumnOrder <= colCount && col.ColumnName.Equals(worksheet.Cells[1, col.ColumnOrder].Value.ToString()))
-                    {
-                        matched = true;
-                    }
-                    else
-                    {
-                        matched = false;
-                    }
-                }
 
-                if (matched)
+                    var matched = false;
+                    foreach (var col in columns)
+                    {
+                        if (col.ColumnOrder <= colCount && col.ColumnName.Equals(worksheet.Cells[1, col.ColumnOrder].Value.ToString()))
+                        {
+                            matched = true;
+                        }
+                        else
+                        {
+                            matched = false;
+                        }
+                    }
+
+                    if (matched)
+                    {
+                        try
+                        {
+
+
+
+                            if (source == "WebsiteLeads")
+                            {
+                                return MapWebsiteLeadData(worksheet);
+                            }
+                            else if (source == "Just Dial")
+                            {
+                                return MapJustDialLeadData(worksheet, source, stateCityMappings);
+                            }
+                            else if (source == "Cement")
+                            {
+                                return MapCementLeadData(worksheet, source);
+                            }
+                            else if (source == "Generic")
+                            {
+                                return MapGenericLeadData(worksheet);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+
+
+                }
+                catch (Exception ex)
                 {
-                    if (source == "WebsiteLeads")
-                    {
-                        return MapWebsiteLeadData(worksheet);
-                    }
-                    else if (source == "Just Dial")
-                    {
-                        return MapJustDialLeadData(worksheet, source, stateCityMappings);
-                    }
-                    else if (source == "Cement")
-                    {
-                        return MapCementLeadData(worksheet, source);
-                    }
-                    else if (source == "Generic")
-                    {
-                        return MapGenericLeadData(worksheet);
-                    }
+                   
                 }
 
             }
@@ -235,24 +270,32 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
             var colCount = worksheet.Dimension.Columns;
             var rowCount = worksheet.Dimension.Rows;
-
-            for (int row = 2; row <= rowCount; row++)
+            try
             {
-                uploadLeadList.Add(new UploadLeadDto
+
+
+                for (int row = 2; row <= rowCount; row++)
                 {
-                    SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
-                    LeadDateTime = worksheet.Cells[row, 2].GetValue<DateTime>(),
-                    ContactPersonName = worksheet.Cells[row, 3].GetValue<string>(),
-                    EmailAddress = worksheet.Cells[row, 4].GetValue<string>(),
-                    MobileNumber = worksheet.Cells[row, 5].GetValue<string>(),
-                    ContactType = "Primary",
-                    Subject = worksheet.Cells[row, 6].GetValue<string>(),
-                    State = worksheet.Cells[row, 7].GetValue<string>(),
-                    City = worksheet.Cells[row, 8].GetValue<string>(),
-                    Description = worksheet.Cells[row, 9].GetValue<string>(),
-                    EnquireFor = worksheet.Cells[row, 10].GetValue<string>(),
-                    LeadSource = GetLeadSource(worksheet.Cells[row, 10].GetValue<string>()),
-                });
+                    uploadLeadList.Add(new UploadLeadDto
+                    {
+                        SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
+                        LeadDateTime = worksheet.Cells[row, 2].GetValue<DateTime>(),
+                        ContactPersonName = worksheet.Cells[row, 3].GetValue<string>(),
+                        EmailAddress = worksheet.Cells[row, 4].GetValue<string>(),
+                        MobileNumber = worksheet.Cells[row, 5].GetValue<string>(),
+                        ContactType = "Primary",
+                        Subject = worksheet.Cells[row, 6].GetValue<string>(),
+                        State = worksheet.Cells[row, 7].GetValue<string>(),
+                        City = worksheet.Cells[row, 8].GetValue<string>(),
+                        Description = worksheet.Cells[row, 9].GetValue<string>(),
+                        EnquireFor = worksheet.Cells[row, 10].GetValue<string>(),
+                        LeadSource = GetLeadSource(worksheet.Cells[row, 10].GetValue<string>()),
+                    });
+
+                }
+            }
+            catch (Exception ex)
+            {
 
             }
 
@@ -268,27 +311,36 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
             for (int row = 2; row <= rowCount; row++)
             {
-                uploadLeadList.Add(new UploadLeadDto
+                try
                 {
-                    LeadDateTime = GetConvertedDateTime(worksheet.Cells[row, 1].GetValue<DateTime>().ToString("dd-MM-yyyy"),
-                             worksheet.Cells[row, 2].GetValue<DateTime>().ToString("HH:mm:ss")),
-                    EnquireFor = worksheet.Cells[row, 3].GetValue<string>(),
-                    LeadSource = GetLeadSource(worksheet.Cells[row, 3].GetValue<string>()),
-                    ContactPersonName = worksheet.Cells[row, 4].GetValue<string>(),
-                    EmailAddress = worksheet.Cells[row, 5].GetValue<string>(),
-                    Subject = worksheet.Cells[row, 6].GetValue<string>(),
-                    Description = worksheet.Cells[row, 7].GetValue<string>(),
-                    MobileNumber = worksheet.Cells[row, 8].GetValue<string>(),
-                    MobileNumber2 = worksheet.Cells[row, 9].GetValue<string>(),
-                    PhoneNumber = worksheet.Cells[row, 10].GetValue<string>(),
-                    PhoneNumber2 = worksheet.Cells[row, 11].GetValue<string>(),
-                    EmailAddress2 = worksheet.Cells[row, 12].GetValue<string>(),
-                    Company = worksheet.Cells[row, 13].GetValue<string>(),
-                    Address = worksheet.Cells[row, 14].GetValue<string>(),
-                    City = worksheet.Cells[row, 15].GetValue<string>(),
-                    State = worksheet.Cells[row, 16].GetValue<string>(),
-                    ContactType = "Primary",
-                });
+
+
+                    uploadLeadList.Add(new UploadLeadDto
+                    {
+                        LeadDateTime = GetConvertedDateTime(worksheet.Cells[row, 1].GetValue<DateTime>().ToString("dd-MM-yyyy"),
+                                 worksheet.Cells[row, 2].GetValue<DateTime>().ToString("HH:mm:ss")),
+                        EnquireFor = worksheet.Cells[row, 3].GetValue<string>(),
+                        LeadSource = GetLeadSource(worksheet.Cells[row, 3].GetValue<string>()),
+                        ContactPersonName = worksheet.Cells[row, 4].GetValue<string>(),
+                        EmailAddress = worksheet.Cells[row, 5].GetValue<string>(),
+                        Subject = worksheet.Cells[row, 6].GetValue<string>(),
+                        Description = worksheet.Cells[row, 7].GetValue<string>(),
+                        MobileNumber = worksheet.Cells[row, 8].GetValue<string>(),
+                        MobileNumber2 = worksheet.Cells[row, 9].GetValue<string>(),
+                        PhoneNumber = worksheet.Cells[row, 10].GetValue<string>(),
+                        PhoneNumber2 = worksheet.Cells[row, 11].GetValue<string>(),
+                        EmailAddress2 = worksheet.Cells[row, 12].GetValue<string>(),
+                        Company = worksheet.Cells[row, 13].GetValue<string>(),
+                        Address = worksheet.Cells[row, 14].GetValue<string>(),
+                        City = worksheet.Cells[row, 15].GetValue<string>(),
+                        State = worksheet.Cells[row, 16].GetValue<string>(),
+                        ContactType = "Primary",
+                    });
+                }
+                catch (Exception ex)
+                {
+
+                }
 
             }
 
@@ -317,34 +369,42 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
             for (int row = 2; row <= rowCount; row++)
             {
-
-                var uploadLead = new UploadLeadDto
+                try
                 {
-                    SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
-                    LeadDateTime = GetConvertedDateTime(worksheet.Cells[row, 2].GetValue<DateTime>().ToString("dd-MM-yyyy"),
-                            worksheet.Cells[row, 3].GetValue<DateTime>().ToString("HH:mm:ss")),
-                    ContactPersonName = worksheet.Cells[row, 5].GetValue<string>(),
-                    PhoneNumber = worksheet.Cells[row, 6].GetValue<string>(),
-                    MobileNumber = worksheet.Cells[row, 7].GetValue<string>(),
-                    EmailAddress = worksheet.Cells[row, 8].GetValue<string>(),
-                    ContactType = "Primary",
-                    CategoryName = worksheet.Cells[row, 9].GetValue<string>(),
-                    Subject = worksheet.Cells[row, 9].GetValue<string>(),
-                    Address = worksheet.Cells[row, 10].GetValue<string>(),
-                    City = worksheet.Cells[row, 11].GetValue<string>(),
-                    LeadSource = source
-                };
 
-                var stateCityMapping = stateCityMappings
-                            .Where(x => x.City.ToLower().Equals(uploadLead.City.ToLower()))
-                            .FirstOrDefault();
 
-                if (stateCityMapping != null)
-                {
-                    uploadLead.State = stateCityMapping.StateName;
+                    var uploadLead = new UploadLeadDto
+                    {
+                        SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
+                        LeadDateTime = GetConvertedDateTime(worksheet.Cells[row, 2].GetValue<DateTime>().ToString("dd-MM-yyyy"),
+                                worksheet.Cells[row, 3].GetValue<DateTime>().ToString("HH:mm:ss")),
+                        ContactPersonName = worksheet.Cells[row, 5].GetValue<string>(),
+                        PhoneNumber = worksheet.Cells[row, 6].GetValue<string>(),
+                        MobileNumber = worksheet.Cells[row, 7].GetValue<string>(),
+                        EmailAddress = worksheet.Cells[row, 8].GetValue<string>(),
+                        ContactType = "Primary",
+                        CategoryName = worksheet.Cells[row, 9].GetValue<string>(),
+                        Subject = worksheet.Cells[row, 9].GetValue<string>(),
+                        Address = worksheet.Cells[row, 10].GetValue<string>(),
+                        City = worksheet.Cells[row, 11].GetValue<string>(),
+                        LeadSource = source
+                    };
+
+                    var stateCityMapping = stateCityMappings
+                                .Where(x => x.City.ToLower().Equals(uploadLead.City.ToLower()))
+                                .FirstOrDefault();
+
+                    if (stateCityMapping != null)
+                    {
+                        uploadLead.State = stateCityMapping.StateName;
+                    }
+
+                    uploadLeadList.Add(uploadLead);
                 }
+                catch (Exception ex)
+                {
 
-                uploadLeadList.Add(uploadLead);
+                }
 
             }
 
@@ -375,18 +435,18 @@ namespace HRJ.LMS.Infrastructure.Utilities
                 newDateTime = string.Format("{0}/{1}/{2} {3}",
                     splittedDate[0], splittedDate[1], splittedDate[2].Substring(0, 4), time);
             }
-            else if(_env.IsStaging()) //QA Format
+            else if (_env.IsStaging()) //QA Format
             {
-                newDateTime = string.Format("{1}/{0}/{2} {3}", 
-                    splittedDate[0], splittedDate[1], splittedDate[2].Substring(0, 4), time); 
+                newDateTime = string.Format("{1}/{0}/{2} {3}",
+                    splittedDate[0], splittedDate[1], splittedDate[2].Substring(0, 4), time);
             }
-            else if(_env.IsDevelopment()) //Dev Format
+            else if (_env.IsDevelopment()) //Dev Format
             {
-                newDateTime = string.Format("{0}/{1}/{2} {3}", 
-                    splittedDate[0], splittedDate[1], splittedDate[2].Substring(0, 4), time); 
+                newDateTime = string.Format("{0}/{1}/{2} {3}",
+                    splittedDate[0], splittedDate[1], splittedDate[2].Substring(0, 4), time);
             }
-            
-            
+
+
 
             return Convert.ToDateTime(newDateTime);
         }
@@ -400,34 +460,40 @@ namespace HRJ.LMS.Infrastructure.Utilities
 
             for (int row = 2; row <= rowCount; row++)
             {
-                uploadLeadList.Add(new UploadLeadDto
+                try
                 {
-                    SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
-                    State = worksheet.Cells[row, 2].GetValue<string>(),
-                    LeadDateTime = worksheet.Cells[row, 9].GetValue<DateTime>(),
-                    ContactPersonName = worksheet.Cells[row, 10].GetValue<string>(),
-                    Address = worksheet.Cells[row, 11].GetValue<string>(),
-                    City = worksheet.Cells[row, 12].GetValue<string>(),
-                    MobileNumber = worksheet.Cells[row, 13].GetValue<string>(),
-                    ContactType = "Primary",
-                    StageOfConstruction = worksheet.Cells[row, 14].GetValue<string>(),
-                    Subject = worksheet.Cells[row, 14].GetValue<string>(),
-                    Description = string.Format("Region:{0}-{1}-{2}\nPrism Contact Person:{3},{4}" +
-                            "\nStage Of Construction:{5}, Lead Status:{6}\nServices Offered:",
-                                worksheet.Cells[row, 3].GetValue<string>(), //Region
-                                worksheet.Cells[row, 4].GetValue<string>(), //branch
-                                worksheet.Cells[row, 5].GetValue<string>(), //territory
-                                worksheet.Cells[row, 6].GetValue<string>(), //contact person name
-                                worksheet.Cells[row, 7].GetValue<string>(), //contact person mobile
-                                worksheet.Cells[row, 14].GetValue<string>(), //stage of construction
-                                worksheet.Cells[row, 17].GetValue<string>(), //lead status
-                                worksheet.Cells[row, 21].GetValue<string>() //services Offered
-                                ),
+                    uploadLeadList.Add(new UploadLeadDto
+                    {
+                        SerialNumber = worksheet.Cells[row, 1].GetValue<int>(),
+                        State = worksheet.Cells[row, 2].GetValue<string>(),
+                        LeadDateTime = worksheet.Cells[row, 9].GetValue<DateTime>(),
+                        ContactPersonName = worksheet.Cells[row, 10].GetValue<string>(),
+                        Address = worksheet.Cells[row, 11].GetValue<string>(),
+                        City = worksheet.Cells[row, 12].GetValue<string>(),
+                        MobileNumber = worksheet.Cells[row, 13].GetValue<string>(),
+                        ContactType = "Primary",
+                        StageOfConstruction = worksheet.Cells[row, 14].GetValue<string>(),
+                        Subject = worksheet.Cells[row, 14].GetValue<string>(),
+                        Description = string.Format("Region:{0}-{1}-{2}\nPrism Contact Person:{3},{4}" +
+                                "\nStage Of Construction:{5}, Lead Status:{6}\nServices Offered:",
+                                    worksheet.Cells[row, 3].GetValue<string>(), //Region
+                                    worksheet.Cells[row, 4].GetValue<string>(), //branch
+                                    worksheet.Cells[row, 5].GetValue<string>(), //territory
+                                    worksheet.Cells[row, 6].GetValue<string>(), //contact person name
+                                    worksheet.Cells[row, 7].GetValue<string>(), //contact person mobile
+                                    worksheet.Cells[row, 14].GetValue<string>(), //stage of construction
+                                    worksheet.Cells[row, 17].GetValue<string>(), //lead status
+                                    worksheet.Cells[row, 21].GetValue<string>() //services Offered
+                                    ),
 
-                    //region branch territory name of office, con
-                    LeadSource = source
-                });
+                        //region branch territory name of office, con
+                        LeadSource = source
+                    });
+                }
+                catch (Exception ex)
+                {
 
+                }
             }
 
             return uploadLeadList;

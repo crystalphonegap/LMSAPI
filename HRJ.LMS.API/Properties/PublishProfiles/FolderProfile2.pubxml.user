@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\AhmedProject\LMS\LMSAPI\PublishAPI</_PublishTargetUrl>
+    <History>True|2022-11-08T06:07:04.7174918Z;True|2022-11-08T10:58:43.4125869+05:30;True|2022-11-08T10:41:34.1725069+05:30;True|2022-11-08T10:30:19.3879792+05:30;</History>
+  </PropertyGroup>
+</Project>

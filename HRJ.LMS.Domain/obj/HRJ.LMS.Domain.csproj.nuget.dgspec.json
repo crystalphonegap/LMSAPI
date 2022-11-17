@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {}
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {}
   },
   "projects": {
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
         "projectName": "HRJ.LMS.Domain",
-        "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
         "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\obj\\",
+        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.14, )"
@@ -63,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     }

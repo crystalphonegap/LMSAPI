@@ -36,6 +36,7 @@ namespace HRJ.LMS.Application.Mapping
             CreateMap<LeadSource, LeadSourceDto>();
 
             CreateMap<LeadReminder, LeadReminderDto>();
+           
 
             CreateMap<ECStateMapping, ExperienceCenterStateDto>()
                 .ForMember(d => d.StateId, opts => opts.MapFrom(s => s.State.Id))
@@ -87,7 +88,21 @@ namespace HRJ.LMS.Application.Mapping
                 .ForMember(d => d.LeadContactDetails, opts => opts.MapFrom(s => GetJustDialLeadContactDetails(s)))
                 .ForMember(d => d.LastUpdatedBy, opts => opts.MapFrom(s => "System"))
                 .ForMember(d => d.LastUpdatedAt, opts => opts.MapFrom(s => DateTime.Now));
-            
+
+            CreateMap<AppLead.DashLock.LeadDashlockCommand, LeadDashLock>()
+              .ForMember(d => d.LeadCreatedAt, opts => opts.MapFrom(s => DateTime.Now));
+
+            CreateMap<AppLead.DashLock.LeadDashlockCommand, Lead>()
+                .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.LeadId))
+                .ForMember(d => d.LeadSource, opts => opts.MapFrom(s => "Dash Lock"))
+                .ForMember(d => d.ContactPersonName, opts => opts.MapFrom(s => s.Name))
+                .ForMember(d => d.LeadDateTime, opts => opts.MapFrom(s => GetDashLockLeadDateTime(s)))
+                .ForMember(d => d.Subject, opts => opts.MapFrom(s => s.Category))
+                .ForMember(d => d.Address, opts => opts.MapFrom(s => s.Area))
+                .ForMember(d => d.LeadContactDetails, opts => opts.MapFrom(s => GetDashLockLeadContactDetails(s)))
+                .ForMember(d => d.LastUpdatedBy, opts => opts.MapFrom(s => "System"))
+                .ForMember(d => d.LastUpdatedAt, opts => opts.MapFrom(s => DateTime.Now));
+
             CreateMap<AppLead.LeadWebPortal.LeadWebPortalCommand, Lead>()
                 .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.LeadId))
                 .ForMember(d => d.LeadDateTime, opts => opts.MapFrom(s => s.Date))
@@ -143,6 +158,45 @@ namespace HRJ.LMS.Application.Mapping
         }
 
         private List<LeadContactDetail> GetJustDialLeadContactDetails(AppLead.LeadJustDial.LeadJustDialCommand leadJustDialCommand)
+        {
+            var leadContactDetails = new List<LeadContactDetail>
+            {
+                new LeadContactDetail
+                {
+                    MobileNumber = GetTenDigitMobileNo(leadJustDialCommand.Mobile),
+                    EmailAddress = leadJustDialCommand.Email,
+                    PhoneNumber = leadJustDialCommand.Phone,
+                    ContactType = "Primary"
+                }
+            };
+
+            return leadContactDetails;
+        }
+
+        // New Dash Lock
+
+        private DateTime GetDashLockLeadDateTime(AppLead.DashLock.LeadDashlockCommand leadJustDialCommand)
+        {
+            var leadDateTime = leadJustDialCommand.Date;
+            if (!string.IsNullOrEmpty(leadJustDialCommand.Time))
+            {
+                var splittedTime = leadJustDialCommand.Time.Split(":");
+                if (splittedTime.Length == 3)
+                {
+                    leadDateTime = new DateTime(leadJustDialCommand.Date.Year,
+                                    leadJustDialCommand.Date.Month,
+                                    leadJustDialCommand.Date.Day,
+                                    Convert.ToInt32(splittedTime[0]),
+                                    Convert.ToInt32(splittedTime[1]),
+                                    Convert.ToInt32(splittedTime[2])
+                                    );
+                }
+            }
+
+            return leadDateTime;
+        }
+
+        private List<LeadContactDetail> GetDashLockLeadContactDetails(AppLead.DashLock.LeadDashlockCommand leadJustDialCommand)
         {
             var leadContactDetails = new List<LeadContactDetail>
             {

@@ -95,32 +95,50 @@ namespace HRJ.LMS.Application.AppLead
                 return leadDetailDto;
             }
 
+            //private void SetLeadStatus(Lead lead, LeadDetailDto leadDetailDto)
+            //{
+            //    leadDetailDto.OverallLeadStatus = "Open";
+
+            //    if (LeadStatusCode.CallingStatus_NotReachable
+            //                .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase) 
+            //            || lead.LeadStatus == null
+            //            || LeadStatusCode.LeadStatus_Follow_up
+            //                    .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        leadDetailDto.OverallLeadStatus = "Open";
+            //    }
+
+            //    if (LeadStatusCode.CallingStatus_NotQualified
+            //            .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
+            //        || LeadStatusCode.CallingStatus_Lost_To_Competition
+            //            .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
+            //        || LeadStatusCode.LeadStatus_Closed_with_HRJ
+            //            .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
+            //        || LeadStatusCode.LeadStatus_Closed_with_other_brand
+            //            .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
+            //        || LeadStatusCode.LeadStatus_No_Requirement
+            //            .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        leadDetailDto.OverallLeadStatus = "Closed";
+            //    }
+            //}
+
             private void SetLeadStatus(Lead lead, LeadDetailDto leadDetailDto)
             {
-                leadDetailDto.OverallLeadStatus = "Open";
-                
-                if (LeadStatusCode.CallingStatus_NotReachable
-                            .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase) 
-                        || lead.LeadStatus == null
-                        || LeadStatusCode.LeadStatus_Follow_up
-                                .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+
+                if (lead.LeadCallingStatusId == 2 || lead.LeadCallingStatusId == 3 || lead.LeadCallingStatusId == null || lead.LeadStatusId == 4 || lead.LeadStatusId == null)
                 {
                     leadDetailDto.OverallLeadStatus = "Open";
                 }
-
-                if (LeadStatusCode.CallingStatus_NotQualified
-                        .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
-                    || LeadStatusCode.CallingStatus_Lost_To_Competition
-                        .Equals(lead.LeadCallingStatus?.CallingStatus, StringComparison.OrdinalIgnoreCase)
-                    || LeadStatusCode.LeadStatus_Closed_with_HRJ
-                        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
-                    || LeadStatusCode.LeadStatus_Closed_with_other_brand
-                        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase)
-                    || LeadStatusCode.LeadStatus_No_Requirement
-                        .Equals(lead.LeadStatus?.Status, StringComparison.OrdinalIgnoreCase))
+                else
                 {
-                    leadDetailDto.OverallLeadStatus = "Closed";
+                    leadDetailDto.OverallLeadStatus = "Close";
                 }
+              
+
+
+
+
             }
         }
 

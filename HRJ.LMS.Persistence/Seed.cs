@@ -324,6 +324,15 @@ namespace HRJ.LMS.Persistence
                         /* PhoneNumber = "7337041313", */
                         Email = "saraf.rajeev@hrjohnsonindia.com",
                         Status = 2
+                    },
+                                         new AppUser
+                    {
+                        FullName = "All",
+                        UserName = "g.vikas@hrjohnsonindia.com",
+                        UserType = "Business",
+                        /* PhoneNumber = "7337041313", */
+                        Email = "g.vikas@hrjohnsonindia.com",
+                        Status = 2
                     }
                 };
 
@@ -1768,6 +1777,12 @@ namespace HRJ.LMS.Persistence
                         LeadSource = "Download",
                         ColumnName = "Future volume requirement(M2)",
                         ColumnOrder = 37
+                    },
+                     new UploadExcelTemplate
+                    {
+                        LeadSource = "Download",
+                        ColumnName = "Last modify Date",
+                        ColumnOrder = 38
                     }
                 };
                 await context.UploadExcelTemplates.AddRangeAsync(excelTemplates);

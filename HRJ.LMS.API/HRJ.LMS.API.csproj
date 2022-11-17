@@ -1,14 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <ItemGroup>
-    <ProjectReference Include="..\HRJ.LMS.Application\HRJ.LMS.Application.csproj"/>
-    <ProjectReference Include="..\HRJ.LMS.Infrastructure\HRJ.LMS.Infrastructure.csproj"/>
+    <ProjectReference Include="..\HRJ.LMS.Application\HRJ.LMS.Application.csproj" />
+    <ProjectReference Include="..\HRJ.LMS.Infrastructure\HRJ.LMS.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.14"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.14"/>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.14"/>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4"/>
-    <PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="0.16.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="NetEscapades.AspNetCore.SecurityHeaders" Version="0.16.0" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>

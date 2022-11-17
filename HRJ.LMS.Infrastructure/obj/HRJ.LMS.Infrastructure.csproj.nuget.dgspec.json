@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {}
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj",
+        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj",
         "projectName": "HRJ.LMS.Application",
-        "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj",
+        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj",
         "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\obj\\",
+        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,11 +31,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
-                "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj"
+              "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
+                "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj"
               },
-              "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj": {
-                "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj"
+              "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj": {
+                "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj"
               }
             }
           }
@@ -78,18 +78,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
         "projectName": "HRJ.LMS.Domain",
-        "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
         "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\obj\\",
+        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -121,6 +121,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.14, )"
@@ -141,18 +145,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj",
+        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj",
         "projectName": "HRJ.LMS.Infrastructure",
-        "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj",
+        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Infrastructure\\obj\\",
+        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -172,8 +176,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
-                "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj"
+              "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
+                "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj"
               }
             }
           }
@@ -212,18 +216,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj": {
+    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj",
+        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj",
         "projectName": "HRJ.LMS.Persistence",
-        "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj",
+        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\HRJ.LMS.Persistence.csproj",
         "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Persistence\\obj\\",
+        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -243,8 +247,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
-                "projectPath": "D:\\AhmedProject\\LMS\\hrj-lms-master\\hrj-lms-master\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj"
+              "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
+                "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj"
               }
             }
           }
@@ -287,7 +291,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
         }
       }
     }
