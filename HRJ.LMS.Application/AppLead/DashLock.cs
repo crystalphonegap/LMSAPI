@@ -17,25 +17,36 @@ namespace HRJ.LMS.Application.AppLead
 
         public class LeadDashlockCommand : IRequest<BaseDto>
         {
-            public string LeadId { get; set; }
-            public string LeadType { get; set; }
-            public string Prefix { get; set; }
-            public string Name { get; set; }
-            public string Mobile { get; set; }
-            public string Phone { get; set; }
-            public string Email { get; set; }
+            public Guid Id { get; set; }
             public DateTime Date { get; set; }
-            public string Category { get; set; }
-            public string City { get; set; }
-            public string Area { get; set; }
-            public string BranchArea { get; set; }
-            public int DNCMobile { get; set; }
-            public int DNCPhone { get; set; }
-            public string Company { get; set; }
-            public string Pincode { get; set; }
-            public string Time { get; set; }
-            public string BranchPin { get; set; }
-            public string ParentId { get; set; }
+
+            public DateTime LeadCreatedAt { get; set; }
+
+            public int Leadsource_Id { get; set; }
+
+            //Added on 18/11/2022
+            public string caller_number { get; set; } //1
+
+            public string called_number { get; set; } //2
+
+            public string routing_number { get; set; } //3
+            public string location_id { get; set; }//4
+
+            public string location_external_id { get; set; }//5
+
+            public string location_name { get; set; }//6
+
+            public string locality { get; set; }//7
+
+            public string city { get; set; }//8
+
+            public string state { get; set; }//9
+
+            public string pincode { get; set; }//10
+
+            public string lead_date { get; set; }//11
+            public string type { get; set; }//12
+            //Added on 18/11/2022
         }
 
         public class Handler : IRequestHandler<LeadDashlockCommand, BaseDto>
@@ -56,7 +67,7 @@ namespace HRJ.LMS.Application.AppLead
                 var DashLockLead = _mapper.Map<LeadDashlockCommand, LeadDashLock>(request);
 
                 var dbLead = _context.Leads
-                                .Where(x => x.LeadSourceId == DashLockLead.LeadId
+                                .Where(x => x.LeadSourceId == DashLockLead.Leadsource_Id.ToString()
                                     && x.LeadSource == "Dash Lock")
                                 .FirstOrDefault();
 
@@ -76,15 +87,22 @@ namespace HRJ.LMS.Application.AppLead
                     await _context.Leads.AddAsync(lead);
                 }
 
-                await _context.LeadDashLock.AddAsync(DashLockLead);
+                try
+                {
+                    await _context.LeadDashLock.AddAsync(DashLockLead);
 
-                var success = await _context.SaveChangesAsync() > 0;
+                    var success = await _context.SaveChangesAsync() > 0;
 
-                await _leadActivityLog.AddLeadActivityLog(lead, "System", "Start", "Lead Added in the system", 1, null);
+                    await _leadActivityLog.AddLeadActivityLog(lead, "System", "Start", "Lead Added in the system", 1, null);
 
-                if (success) return new BaseDto { Message = string.Format("Lead Saved Successfully"), StatusCode = (int)HttpStatusCode.OK };
+                    if (success) return new BaseDto { Message = string.Format("Lead Saved Successfully"), StatusCode = (int)HttpStatusCode.OK };
 
-                throw new RestException(HttpStatusCode.BadRequest, new { message = "Problem saving changes" });
+                    throw new RestException(HttpStatusCode.BadRequest, new { message = "Problem saving changes" });
+                }
+                catch (Exception ex)
+                {
+                    throw new RestException(HttpStatusCode.BadRequest, new { message = "Problem saving changes" });
+                }
             }
         }
     }

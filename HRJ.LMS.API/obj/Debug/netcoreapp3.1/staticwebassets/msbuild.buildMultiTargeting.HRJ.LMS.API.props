@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HRJ.LMS.API.props" />
+</Project>

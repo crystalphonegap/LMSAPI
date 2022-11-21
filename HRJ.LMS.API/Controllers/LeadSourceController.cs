@@ -26,5 +26,12 @@ namespace HRJ.LMS.API.Controllers
             
             return await Mediator.Send(LeadDashlock);
         }
+
+        [HttpPost("DashlockForm")]
+        public async Task<BaseDto> DashlockForm(DashLockForm.LeadDashLockFormCommand LeadDashlock)
+        {
+
+            return await Mediator.Send(LeadDashlock);
+        }
     }
 }

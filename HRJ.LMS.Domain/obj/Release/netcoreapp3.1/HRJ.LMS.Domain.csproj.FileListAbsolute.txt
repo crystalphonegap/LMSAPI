@@ -28,3 +28,12 @@ D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Doma
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.csproj.CoreCompileInputs.cache
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.dll
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Release\netcoreapp3.1\HRJ.LMS.Domain.deps.json
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Release\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Release\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.csproj.AssemblyReference.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.AssemblyInfoInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.AssemblyInfo.cs
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.csproj.CoreCompileInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Release\netcoreapp3.1\HRJ.LMS.Domain.pdb

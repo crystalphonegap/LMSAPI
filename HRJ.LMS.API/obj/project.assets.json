@@ -8252,23 +8252,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\CrystalPc3\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.API\\HRJ.LMS.API.csproj",
+      "projectUniqueName": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.API\\HRJ.LMS.API.csproj",
       "projectName": "HRJ.LMS.API",
-      "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.API\\HRJ.LMS.API.csproj",
-      "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-      "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.API\\obj\\",
+      "projectPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.API\\HRJ.LMS.API.csproj",
+      "packagesPath": "C:\\Users\\CrystalPc3\\.nuget\\packages\\",
+      "outputPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\CRYSTAL PC 2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\CrystalPc3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8282,11 +8283,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
-              "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj"
+            "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj": {
+              "projectPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Application\\HRJ.LMS.Application.csproj"
             },
-            "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {
-              "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj"
+            "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj": {
+              "projectPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Infrastructure\\HRJ.LMS.Infrastructure.csproj"
             }
           }
         }
@@ -8344,7 +8345,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

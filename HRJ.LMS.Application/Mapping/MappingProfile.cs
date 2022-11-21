@@ -93,15 +93,30 @@ namespace HRJ.LMS.Application.Mapping
               .ForMember(d => d.LeadCreatedAt, opts => opts.MapFrom(s => DateTime.Now));
 
             CreateMap<AppLead.DashLock.LeadDashlockCommand, Lead>()
-                .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.LeadId))
+                .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.Leadsource_Id))
                 .ForMember(d => d.LeadSource, opts => opts.MapFrom(s => "Dash Lock"))
-                .ForMember(d => d.ContactPersonName, opts => opts.MapFrom(s => s.Name))
+                //.ForMember(d => d.ContactPersonName, opts => opts.MapFrom(s => s.))
                 .ForMember(d => d.LeadDateTime, opts => opts.MapFrom(s => GetDashLockLeadDateTime(s)))
-                .ForMember(d => d.Subject, opts => opts.MapFrom(s => s.Category))
-                .ForMember(d => d.Address, opts => opts.MapFrom(s => s.Area))
+                //.ForMember(d => d.Subject, opts => opts.MapFrom(s => s.))
+                .ForMember(d => d.Address, opts => opts.MapFrom(s => s.locality))
                 .ForMember(d => d.LeadContactDetails, opts => opts.MapFrom(s => GetDashLockLeadContactDetails(s)))
                 .ForMember(d => d.LastUpdatedBy, opts => opts.MapFrom(s => "System"))
                 .ForMember(d => d.LastUpdatedAt, opts => opts.MapFrom(s => DateTime.Now));
+
+            CreateMap<AppLead.DashLockForm.LeadDashLockFormCommand, LeadDashLock_Form>()
+              .ForMember(d => d.LeadCreatedAt, opts => opts.MapFrom(s => DateTime.Now));
+
+            CreateMap<AppLead.DashLockForm.LeadDashLockFormCommand, Lead>()
+                .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.Leadsource_Id))
+                .ForMember(d => d.LeadSource, opts => opts.MapFrom(s => "Dash Lock"))
+                .ForMember(d => d.ContactPersonName, opts => opts.MapFrom(s => s.name))
+                .ForMember(d => d.LeadDateTime, opts => opts.MapFrom(s => GetDashLockLeadFormDateTime(s)))
+                .ForMember(d => d.Subject, opts => opts.MapFrom(s => s.description))
+                .ForMember(d => d.Address, opts => opts.MapFrom(s => s.locality))
+                .ForMember(d => d.LeadContactDetails, opts => opts.MapFrom(s => GetDashLockLeadFormContactDetails(s)))
+                .ForMember(d => d.LastUpdatedBy, opts => opts.MapFrom(s => "System"))
+                .ForMember(d => d.LastUpdatedAt, opts => opts.MapFrom(s => DateTime.Now));
+
 
             CreateMap<AppLead.LeadWebPortal.LeadWebPortalCommand, Lead>()
                 .ForMember(d => d.LeadSourceId, opts => opts.MapFrom(s => s.LeadId))
@@ -130,7 +145,7 @@ namespace HRJ.LMS.Application.Mapping
 
         private string GetTenDigitMobileNo(string mobileNo)
         {
-            if(string.IsNullOrEmpty(mobileNo) || mobileNo.Length < 10)
+            if(string.IsNullOrEmpty(mobileNo) || mobileNo.Length <= 10)
                 return mobileNo;
 
             return mobileNo?.Substring(mobileNo.Length - 10);
@@ -178,20 +193,41 @@ namespace HRJ.LMS.Application.Mapping
         private DateTime GetDashLockLeadDateTime(AppLead.DashLock.LeadDashlockCommand leadJustDialCommand)
         {
             var leadDateTime = leadJustDialCommand.Date;
-            if (!string.IsNullOrEmpty(leadJustDialCommand.Time))
-            {
-                var splittedTime = leadJustDialCommand.Time.Split(":");
-                if (splittedTime.Length == 3)
-                {
-                    leadDateTime = new DateTime(leadJustDialCommand.Date.Year,
-                                    leadJustDialCommand.Date.Month,
-                                    leadJustDialCommand.Date.Day,
-                                    Convert.ToInt32(splittedTime[0]),
-                                    Convert.ToInt32(splittedTime[1]),
-                                    Convert.ToInt32(splittedTime[2])
-                                    );
-                }
-            }
+            //if (!string.IsNullOrEmpty(leadJustDialCommand.Time))
+            //{
+            //    var splittedTime = leadJustDialCommand.Time.Split(":");
+            //    if (splittedTime.Length == 3)
+            //    {
+            //        leadDateTime = new DateTime(leadJustDialCommand.Date.Year,
+            //                        leadJustDialCommand.Date.Month,
+            //                        leadJustDialCommand.Date.Day,
+            //                        Convert.ToInt32(splittedTime[0]),
+            //                        Convert.ToInt32(splittedTime[1]),
+            //                        Convert.ToInt32(splittedTime[2])
+            //                        );
+            //    }
+            //}
+
+            return leadDateTime;
+        }
+
+        private DateTime GetDashLockLeadFormDateTime(AppLead.DashLockForm.LeadDashLockFormCommand leadJustDialCommand)
+        {
+            var leadDateTime = Convert.ToDateTime(leadJustDialCommand.lead_date);
+            //if (!string.IsNullOrEmpty(leadJustDialCommand.Time))
+            //{
+            //    var splittedTime = leadJustDialCommand.Time.Split(":");
+            //    if (splittedTime.Length == 3)
+            //    {
+            //        leadDateTime = new DateTime(leadJustDialCommand.Date.Year,
+            //                        leadJustDialCommand.Date.Month,
+            //                        leadJustDialCommand.Date.Day,
+            //                        Convert.ToInt32(splittedTime[0]),
+            //                        Convert.ToInt32(splittedTime[1]),
+            //                        Convert.ToInt32(splittedTime[2])
+            //                        );
+            //    }
+            //}
 
             return leadDateTime;
         }
@@ -202,9 +238,25 @@ namespace HRJ.LMS.Application.Mapping
             {
                 new LeadContactDetail
                 {
-                    MobileNumber = GetTenDigitMobileNo(leadJustDialCommand.Mobile),
-                    EmailAddress = leadJustDialCommand.Email,
-                    PhoneNumber = leadJustDialCommand.Phone,
+                    MobileNumber = GetTenDigitMobileNo(leadJustDialCommand.called_number),
+                    //EmailAddress = leadJustDialCommand.e,
+                    PhoneNumber = leadJustDialCommand.called_number,
+                    ContactType = "Primary"
+                }
+            };
+
+            return leadContactDetails;
+        }
+
+        private List<LeadContactDetail> GetDashLockLeadFormContactDetails(AppLead.DashLockForm.LeadDashLockFormCommand leadJustDialCommand)
+        {
+            var leadContactDetails = new List<LeadContactDetail>
+            {
+                new LeadContactDetail
+                {
+                    MobileNumber = GetTenDigitMobileNo(leadJustDialCommand.mobile),
+                    EmailAddress = leadJustDialCommand.email,
+                    PhoneNumber = leadJustDialCommand.mobile,
                     ContactType = "Primary"
                 }
             };

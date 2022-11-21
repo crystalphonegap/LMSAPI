@@ -28,3 +28,13 @@ D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.dll
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.pdb
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.csproj.AssemblyReference.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.deps.json
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.csproj.AssemblyReference.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.AssemblyInfoInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.AssemblyInfo.cs
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.csproj.CoreCompileInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Domain\obj\Debug\netcoreapp3.1\HRJ.LMS.Domain.GeneratedMSBuildEditorConfig.editorconfig

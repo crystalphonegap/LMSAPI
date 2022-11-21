@@ -43,3 +43,17 @@ D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.csproj.CopyComplete
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.dll
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Application.deps.json
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Application.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Application.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Persistence.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\bin\Release\netcoreapp3.1\HRJ.LMS.Persistence.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.csproj.AssemblyReference.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.AssemblyInfoInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.AssemblyInfo.cs
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.csproj.CoreCompileInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.csproj.CopyComplete
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Application\obj\Release\netcoreapp3.1\HRJ.LMS.Application.pdb

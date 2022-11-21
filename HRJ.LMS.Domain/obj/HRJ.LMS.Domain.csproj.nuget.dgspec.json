@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {}
+    "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {}
   },
   "projects": {
-    "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
+    "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "projectUniqueName": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
         "projectName": "HRJ.LMS.Domain",
-        "projectPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
-        "packagesPath": "C:\\Users\\CRYSTAL PC 2\\.nuget\\packages\\",
-        "outputPath": "D:\\AhmedProject\\LMS\\LMSAPI\\HRJ.LMS.Domain\\obj\\",
+        "projectPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Domain\\HRJ.LMS.Domain.csproj",
+        "packagesPath": "C:\\Users\\CrystalPc3\\.nuget\\packages\\",
+        "outputPath": "D:\\Prism JohnSon LMS\\LMSAPI\\HRJ.LMS.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\CRYSTAL PC 2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CrystalPc3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

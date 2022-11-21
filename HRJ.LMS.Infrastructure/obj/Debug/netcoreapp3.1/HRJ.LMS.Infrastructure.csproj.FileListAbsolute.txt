@@ -49,3 +49,20 @@ D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LM
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.csproj.CopyComplete
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.dll
 D:\AhmedProject\LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.deps.json
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Application.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Persistence.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Application.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Domain.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\bin\Debug\netcoreapp3.1\HRJ.LMS.Persistence.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.csproj.AssemblyReference.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.AssemblyInfoInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.AssemblyInfo.cs
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.csproj.CopyComplete
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.dll
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.pdb
+D:\Prism JohnSon LMS\LMSAPI\HRJ.LMS.Infrastructure\obj\Debug\netcoreapp3.1\HRJ.LMS.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

@@ -36,6 +36,9 @@ namespace HRJ.LMS.Persistence
         public DbSet<JustDialLead> JustDialLeads { get; set; }
         public DbSet<LeadDashLock> LeadDashLock { get; set; }
 
+        public DbSet<LeadDashLock_Form> LeadDashLock_Form { get; set; }
+
+
         public DbSet<StateCityMapping> StateCityMappings { get; set; }
         public DbSet<FiscalYear> FiscalYears { get; set; }
         public DbSet<FiscalMonth> FiscalMonths { get; set; }
